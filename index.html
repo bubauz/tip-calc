@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link
+   rel="icon"
+   type="image/png"
+   sizes="32x32"
+   href="./images/favicon-32x32.png"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <title>Frontend Mentor | Tip calculator app</title>
+ </head>
+ <body>
+  <img src="./images/logo.svg" alt="Logo of My Webside" />
+  <main>
+   <section class="calc">
+    <div class="bill">
+     <label for="bill">Bill</label>
+     <input type="number" name='bill' class="input-bill" dir="rtl" placeholder="0"/>
+     </div>
+    </div>
+    <form class="tip">
+     <label for="tip">Select Tip %</label>
+     <button class="btn-tip" value="5" type="button">5%</button>
+     <button class="btn-tip"
+     value="10" type="button">10%</button>
+     <button class="btn-tip"
+     value="15" type="button">15%</button>
+     <button class="btn-tip"
+     value="25" type="button">25%</button>
+     <button class="btn-tip"
+     value="50" type="button">50%</button>
+     <input type="number" name='tip'class="input-tip" dir="rtl" placeholder="Custom">
+    </form>
+    <div class="people">
+     <label for="people">Number of People</label>
+     <input type="number" 
+     name='people' class="input-people" dir="rtl" placeholder="0" maxlength="4">
+    </div>
+   </section>
+   <section class="result">
+    <div id="result-container"
+    class="tip-result">
+     <p class="text">Tip Amount <br><span>/ person</span></p>
+     <p class="tip-cost">$0.00</p>
+    </div>
+    <div id="result-container"
+    class="total-result">
+     <p class="text">Total <br><span>/ person</span></p>
+     <p class="total-cost">$0.00</p>
+    </div>
+    <button class="btn-reset">Reset</button>
+   </section>
+  </main>
+   
+  
+
+  <script src="app.js"></script>
+ </body>
+</html>
