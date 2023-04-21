@@ -1,5 +1,7 @@
 "use strict";
 
+// Makes Variable
+
 const billInput = document.querySelector(".input-bill");
 
 const tipInput = document.querySelector(".input-tip");
@@ -16,6 +18,8 @@ const resetBtn = document.querySelector(".btn-reset");
 
 let bill,
  tipValue = 0;
+
+// Makes input EventListeners
 
 billInput.addEventListener("input", function () {
  total.textContent = "$" + Number(this.value).toFixed(2);
@@ -35,6 +39,8 @@ peopleInput.addEventListener("input", function () {
   "$" + (tipValue / this.value + bill / this.value).toFixed(2);
 });
 
+// Makes buttons EventListeners
+
 resetBtn.addEventListener("click", function () {
  billInput.value = "";
  tipInput.value = "";
@@ -49,6 +55,8 @@ resetBtn.addEventListener("click", function () {
 tipBtn.forEach((i) => {
  i.addEventListener("click", btnClick);
 });
+
+// Makes Functions
 
 function btnClick() {
  tipBtn.forEach((i) => {
