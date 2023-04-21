@@ -198,8 +198,10 @@ input[type="number"] {
   margin: 15px 0;
  }
 
- .calc p {
-  margin: 5px 0;
+ .btn-tip,
+ .input-tip {
+  width: calc(33% - 16px);
+  font-size: 1rem;
  }
 
  .result {
@@ -228,6 +230,11 @@ input[type="number"] {
 
  .calc {
   flex: 1 1 50%;
+ }
+
+ .btn-tip,
+ .input-tip {
+  width: calc(33% - 16px);
  }
 
  .result {
