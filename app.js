@@ -39,9 +39,8 @@ tipBtn.forEach((i) => {
 
 function btnClick() {
  tipBtn.forEach((i) => {
-  if (i !== this) i.classList.remove("active");
+  i !== this ? i.classList.remove("active") : this.classList.add("active");
  });
- this.classList.toggle("active");
  tipValue = 0;
  tipValue = (this.value / 100) * bill;
  tip.textContent = "$" + tipValue.toFixed(2);
