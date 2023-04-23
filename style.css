@@ -140,7 +140,7 @@ input[type="number"] {
  gap: 20px;
 }
 
-#result-container {
+.result-container {
  display: flex;
  justify-content: space-between;
  font-size: 1.05rem;
@@ -153,7 +153,7 @@ input[type="number"] {
  color: hsl(172, 67%, 45%);
 }
 
-#result-container span {
+.result-container span {
  color: hsl(184, 14%, 56%);
 }
 
