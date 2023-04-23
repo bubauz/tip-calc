@@ -20,43 +20,52 @@
    <section class="calc">
     <div class="bill">
      <label for="bill">Bill</label>
-     <input type="number" name='bill' class="input-bill" dir="rtl" placeholder="0"/>
-     </div>
+     <input
+      type="number"
+      name="bill"
+      class="input-bill"
+      dir="rtl"
+      placeholder="0"
+     />
     </div>
     <form class="tip">
      <label for="tip">Select Tip %</label>
      <button class="btn-tip" value="5" type="button">5%</button>
-     <button class="btn-tip"
-     value="10" type="button">10%</button>
-     <button class="btn-tip"
-     value="15" type="button">15%</button>
-     <button class="btn-tip"
-     value="25" type="button">25%</button>
-     <button class="btn-tip"
-     value="50" type="button">50%</button>
-     <input type="number" name='tip'class="input-tip" dir="rtl" placeholder="Custom">
+     <button class="btn-tip" value="10" type="button">10%</button>
+     <button class="btn-tip" value="15" type="button">15%</button>
+     <button class="btn-tip" value="25" type="button">25%</button>
+     <button class="btn-tip" value="50" type="button">50%</button>
+     <input
+      type="number"
+      name="tip"
+      class="input-tip"
+      dir="rtl"
+      placeholder="Custom"
+     />
     </form>
     <div class="people">
      <label for="people">Number of People</label>
-     <input type="number" 
-     name='people' class="input-people" dir="rtl" placeholder="0" maxlength="4">
+     <input
+      type="number"
+      name="people"
+      class="input-people"
+      dir="rtl"
+      placeholder="0"
+     />
     </div>
    </section>
    <section class="result">
     <div class="result-container tip-result">
-     <p class="text">Tip Amount <br><span>/ person</span></p>
+     <p class="text">Tip Amount <br /><span>/ person</span></p>
      <p class="tip-cost">$0.00</p>
     </div>
-    <div
-    class="result-container total-result">
-     <p class="text">Total <br><span>/ person</span></p>
+    <div class="result-container total-result">
+     <p class="text">Total <br /><span>/ person</span></p>
      <p class="total-cost">$0.00</p>
     </div>
     <button class="btn-reset">Reset</button>
    </section>
   </main>
-   
-  
 
   <script src="app.js"></script>
  </body>
