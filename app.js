@@ -19,38 +19,17 @@ const resetBtn = document.querySelector(".btn-reset");
 let bill,
  tipValue = 0;
 
-// Makes input EventListeners
+// Makes EventListeners
 
-billInput.addEventListener("input", function () {
- total.textContent = "$" + Number(this.value).toFixed(2);
- bill = this.value;
-});
+billInput.addEventListener("input", enterAmount);
 
-tipInput.addEventListener("input", function () {
- tipValue = ((this.value / 100) * bill).toFixed(2);
- tip.textContent = "$" + tipValue;
- total.textContent = "$" + (Number(bill) + Number(tipValue)).toFixed(2);
- removeActive();
-});
+tipInput.addEventListener("input", enterTip);
 
-peopleInput.addEventListener("input", function () {
- tip.textContent = "$" + (tipValue / this.value).toFixed(2);
- total.textContent =
-  "$" + (tipValue / this.value + bill / this.value).toFixed(2);
-});
+peopleInput.addEventListener("input", enterPeople);
 
-// Makes buttons EventListeners
+resetBtn.addEventListener("click", reset);
 
-resetBtn.addEventListener("click", function () {
- billInput.value = "";
- tipInput.value = "";
- peopleInput.value = "";
- bill = 0;
- tipValue = 0;
- total.textContent = "$0.00";
- tip.textContent = "$0.00";
- removeActive();
-});
+// Makes forEach loops
 
 tipBtn.forEach((i) => {
  i.addEventListener("click", btnClick);
@@ -69,8 +48,43 @@ function btnClick() {
  total.textContent = "$" + (Number(bill) + Number(tipValue)).toFixed(2);
 }
 
-const removeActive = function () {
+function removeActive() {
  tipBtn.forEach((i) => {
   i.classList.remove("active");
  });
-};
+}
+
+function maxBill() {
+ if (total.textContent.length > 10)
+  alert("Przekroczona maksymalną liczbę znaków");
+}
+
+function enterAmount() {
+ total.textContent = "$" + Number(this.value).toFixed(2);
+ bill = this.value;
+ maxBill();
+}
+
+function enterTip() {
+ tipValue = ((this.value / 100) * bill).toFixed(2);
+ tip.textContent = "$" + tipValue;
+ total.textContent = "$" + (Number(bill) + Number(tipValue)).toFixed(2);
+ removeActive();
+}
+
+function enterPeople() {
+ tip.textContent = "$" + (tipValue / this.value).toFixed(2);
+ total.textContent =
+  "$" + (tipValue / this.value + bill / this.value).toFixed(2);
+}
+
+function reset() {
+ billInput.value = "";
+ tipInput.value = "";
+ peopleInput.value = "";
+ bill = 0;
+ tipValue = 0;
+ total.textContent = "$0.00";
+ tip.textContent = "$0.00";
+ removeActive();
+}
