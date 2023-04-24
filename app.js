@@ -56,22 +56,20 @@ function removeActive() {
 function enterAmount() {
  total.textContent = "$" + Number(this.value).toFixed(2);
  bill = this.value;
- billInput.oninput = function () {
-  if (this.value.length > 6) {
-   this.value = this.value.slice(0, 6);
-  }
- };
+ if (this.value.length > 7) {
+  alert("Max bill value can be 9999999$");
+  reset();
+ }
 }
 
 function enterTip() {
  tipValue = ((this.value / 100) * bill).toFixed(2);
  tip.textContent = "$" + tipValue;
  total.textContent = "$" + (Number(bill) + Number(tipValue)).toFixed(2);
- tipInput.oninput = function () {
-  if (this.value.length > 3) {
-   this.value = this.value.slice(0, 3);
-  }
- };
+ if (this.value.length > 3) {
+  alert("Max tip % can be 999%");
+  reset();
+ }
  removeActive();
 }
 
