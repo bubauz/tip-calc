@@ -68,8 +68,8 @@ function enterTip() {
  tip.textContent = "$" + tipValue;
  total.textContent = "$" + (Number(bill) + Number(tipValue)).toFixed(2);
  tipInput.oninput = function () {
-  if (this.value.length > 4) {
-   this.value = this.value.slice(0, 4);
+  if (this.value.length > 3) {
+   this.value = this.value.slice(0, 3);
   }
  };
  removeActive();
