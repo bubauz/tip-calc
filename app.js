@@ -53,25 +53,26 @@ function removeActive() {
  });
 }
 
-function maxValue() {
- if (total.textContent.length > 10) {
-  alert("Max bill value is $9999999, and the value of tips is 9999%");
-  reset();
- }
-}
-
 function enterAmount() {
  total.textContent = "$" + Number(this.value).toFixed(2);
  bill = this.value;
- maxValue();
+ billInput.oninput = function () {
+  if (this.value.length > 6) {
+   this.value = this.value.slice(0, 6);
+  }
+ };
 }
 
 function enterTip() {
  tipValue = ((this.value / 100) * bill).toFixed(2);
  tip.textContent = "$" + tipValue;
  total.textContent = "$" + (Number(bill) + Number(tipValue)).toFixed(2);
+ tipInput.oninput = function () {
+  if (this.value.length > 4) {
+   this.value = this.value.slice(0, 4);
+  }
+ };
  removeActive();
- maxValue();
 }
 
 function enterPeople() {
