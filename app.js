@@ -53,15 +53,17 @@ function removeActive() {
  });
 }
 
-function maxBill() {
- if (total.textContent.length > 10)
-  alert("Przekroczona maksymalną liczbę znaków");
+function maxValue() {
+ if (total.textContent.length > 10) {
+  alert("Max bill value is $9999999, and the value of tips is 9999%");
+  reset();
+ }
 }
 
 function enterAmount() {
  total.textContent = "$" + Number(this.value).toFixed(2);
  bill = this.value;
- maxBill();
+ maxValue();
 }
 
 function enterTip() {
@@ -69,6 +71,7 @@ function enterTip() {
  tip.textContent = "$" + tipValue;
  total.textContent = "$" + (Number(bill) + Number(tipValue)).toFixed(2);
  removeActive();
+ maxValue();
 }
 
 function enterPeople() {
